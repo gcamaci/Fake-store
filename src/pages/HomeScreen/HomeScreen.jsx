@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react"
+import formatGameObjs from "../../utils/formatGames";
 const HomeScreen = () => {
     const [products, setProducts] = useState([]);
 
@@ -9,6 +10,7 @@ const HomeScreen = () => {
             const response =  await productData.json()
             setProducts(response)
             console.log(response)
+            console.log(formatGameObjs(response.results))
         } catch(error){
             console.log(error)
         }
@@ -21,6 +23,9 @@ const HomeScreen = () => {
     return (
         <div className="col-start-3 col-end-13 border">
             homepage
+            <div>
+                <Link to='/product'>product Page</Link>
+            </div>
         </div>
     )
 }
