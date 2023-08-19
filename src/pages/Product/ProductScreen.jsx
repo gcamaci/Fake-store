@@ -17,12 +17,17 @@ const ProductScreen = () => {
             console.log(gameData)
 
             const gameInfo = {
-                name: '',
-                description: '',
+                name: gameData.name,
+                description: gameData.description_raw,
                 cover_image: '',
                 screenShots: '',
                 rating: '',
-                platforms: '',
+                platforms: gameData.parent_platforms,
+                website: '',
+                released: '',
+                genres: gameData.genres,
+                devs: '',
+                publishers: ''
             }
         } catch (error) {
             console.log(error)
