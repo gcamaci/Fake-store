@@ -18,7 +18,7 @@ const GameCard = (props) => {
             return icons[`${plat.platform.slug}`]
         }
     })
-    console.log(iconArray)
+    
     return (
         <div onClick={() => navigate(`/product/${id}`)} className='flex flex-col h-[350px] cursor-pointer hover:opacity-70'>
             <div>

@@ -12,7 +12,7 @@ const HomeScreen = () => {
             const response =  await productData.json()
             const formatedGames = formatGameObjs(response.results)
             setProducts(formatedGames)
-            console.log(formatedGames)
+            console.log(response)
             
         } catch(error){
             console.log(error)
