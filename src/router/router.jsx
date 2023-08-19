@@ -8,7 +8,7 @@ export const router = createBrowserRouter([
       element: <HomeScreen />
     },
     {
-      path: "/product",
+      path: "/product/:id",
       element: <ProductScreen />
     }
 ]);
