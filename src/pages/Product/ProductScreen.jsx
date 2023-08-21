@@ -13,22 +13,22 @@ const ProductScreen = () => {
             const gameData = await response.json();
             const screenShots = await fetch(`https://api.rawg.io/api/games/${id}/screenshots?key=e5c64a9c49864500a278d85516df2eac`);
             const imgList = await screenShots.json()
-            console.log(imgList)
-            console.log(gameData)
-
+            
             const gameInfo = {
                 name: gameData.name,
                 description: gameData.description_raw,
-                cover_image: '',
-                screenShots: '',
-                rating: '',
+                cover_image: gameData.background_image,
+                screenShots: imgList.results,
+                rating: gameData.rating,
                 platforms: gameData.parent_platforms,
-                website: '',
-                released: '',
+                website: gameData.website,
+                released: gameData.released,
                 genres: gameData.genres,
-                devs: '',
-                publishers: ''
+                publishers: gameData.publishers[0]
             }
+            
+            console.log(gameData)
+            console.log(gameInfo)
         } catch (error) {
             console.log(error)
         } finally {

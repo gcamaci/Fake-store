@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react"
 import formatGameObjs from "../../utils/formatGames";
 import GameCard from "../../components/GameCard";
+
 const HomeScreen = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +13,7 @@ const HomeScreen = () => {
             const response =  await productData.json()
             const formatedGames = formatGameObjs(response.results)
             setProducts(formatedGames)
-            console.log(response)
+            
             
         } catch(error){
             console.log(error)
@@ -27,7 +28,8 @@ const HomeScreen = () => {
     },[])
 
     return (
-        <div className="col-start-3 col-end-13 border grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 m-2">
+        <div className="col-start-3 col-end-13 border grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-5">
+            
             {isLoading && <h1>Loading...</h1>}
             {products.map((product)=>{
                 return <GameCard key={product.id} {...product}/>
