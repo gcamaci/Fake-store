@@ -43,15 +43,24 @@ const ProductScreen = () => {
     },[id])
     return (
         <div className="">
-            <div className="h-[10vh]">
-                <Link to="/">Home</Link>
-            </div>
-            <div className="border h-[80vh] grid grid-cols-3 grid-rows-3 gap-5 p-5">
-                <div className="col-start-1 col-end-3 row-start-1 row-end-4">
-                    {game && <ImgSlider imgs={game.screenShots} />}
+        {game && (
+            <>
+                <div className="mx-5 h-[10vh] flex justify-between items-center">
+                    <div>
+                        <Link to="/">Home</Link>
+                    </div>
+                    <div>
+                        <h1>{game.name}</h1>
+                    </div>
                 </div>
-            </div>
-        </div>
+                <div className="border h-[80vh] grid grid-cols-3 grid-rows-3 gap-5 p-5">
+                    <div className="col-start-1 col-end-3 row-start-1 row-end-4">
+                        <ImgSlider imgs={game.screenShots} />
+                    </div>
+                </div>
+            </>
+        )}
+    </div>
     )
 }
 
