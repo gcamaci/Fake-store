@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ImgSlider from "../../components/ImgSlider";
+import Description from "../../components/Description";
 const ProductScreen = () => {
     const { id } = useParams();
     const [game, setGame] = useState(null);
@@ -17,7 +18,7 @@ const ProductScreen = () => {
             
             const gameInfo = {
                 name: gameData.name,
-                description: gameData.description_raw,
+                desc: gameData.description_raw,
                 cover_image: gameData.background_image,
                 screenShots: imgList.results,
                 rating: gameData.rating,
@@ -25,7 +26,7 @@ const ProductScreen = () => {
                 website: gameData.website,
                 released: gameData.released,
                 genres: gameData.genres,
-                publishers: gameData.publishers[0]
+                publisher: gameData.publishers[0]
             }
             setGame(gameInfo)
             
@@ -56,6 +57,9 @@ const ProductScreen = () => {
                 <div className="border h-[80vh] grid grid-cols-3 grid-rows-3 gap-5 p-5">
                     <div className="col-start-1 col-end-3 row-start-1 row-end-4">
                         <ImgSlider imgs={game.screenShots} />
+                    </div>
+                    <div className="col-start-3 col-end-4 row-start-1 row-end-3">
+                        <Description info={game}/>
                     </div>
                 </div>
             </>
