@@ -40,11 +40,12 @@ const ProductScreen = () => {
         getGame(id)
     },[id])
     return (
-        <div className="col-start-3 col-end-13 border">
-            Product Page
-            <div className="border">
-                <Link to="/">Back</Link>
+        <div className="border h-[90vh]">
+            <div>
+                <Link to="/">Home</Link>
             </div>
+            
+            
             
         </div>
     )

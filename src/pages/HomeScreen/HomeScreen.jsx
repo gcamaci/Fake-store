@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react"
 import formatGameObjs from "../../utils/formatGames";
 import GameCard from "../../components/GameCard";
-
+import Nav from "../../components/Nav";
 const HomeScreen = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -28,12 +28,14 @@ const HomeScreen = () => {
     },[])
 
     return (
-        <div className="col-start-3 col-end-13 border grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-5">
-            
-            {isLoading && <h1>Loading...</h1>}
-            {products.map((product)=>{
-                return <GameCard key={product.id} {...product}/>
-            })}
+        <div className="grid grid-cols-12">
+            <Nav />
+            <div className="col-start-3 col-end-13 border grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-5">
+                {isLoading && <h1>Loading...</h1>}
+                {products.map((product)=>{
+                    return <GameCard key={product.id} {...product}/>
+                })}
+            </div>
         </div>
     )
 }

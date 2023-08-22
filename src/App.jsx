@@ -6,9 +6,8 @@ import Header from './components/Header';
 function App() {
 
   return (
-    <div className='grid grid-cols-12'>
+    <div>
       <Header />
-      <Nav />
       <RouterProvider router={router} />
     </div>
   )
