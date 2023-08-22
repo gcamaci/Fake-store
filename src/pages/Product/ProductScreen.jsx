@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ImgSlider from "../../components/ImgSlider";
 const ProductScreen = () => {
     const { id } = useParams();
     const [game, setGame] = useState(null);
@@ -26,6 +27,7 @@ const ProductScreen = () => {
                 genres: gameData.genres,
                 publishers: gameData.publishers[0]
             }
+            setGame(gameInfo)
             
             console.log(gameData)
             console.log(gameInfo)
@@ -40,13 +42,15 @@ const ProductScreen = () => {
         getGame(id)
     },[id])
     return (
-        <div className="border h-[90vh]">
-            <div>
+        <div className="">
+            <div className="h-[10vh]">
                 <Link to="/">Home</Link>
             </div>
-            
-            
-            
+            <div className="border h-[80vh] grid grid-cols-3 grid-rows-3 gap-5 p-5">
+                <div className="col-start-1 col-end-3 row-start-1 row-end-4">
+                    {game && <ImgSlider imgs={game.screenShots} />}
+                </div>
+            </div>
         </div>
     )
 }
