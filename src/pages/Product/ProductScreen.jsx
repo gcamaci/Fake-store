@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import ImgSlider from "../../components/ImgSlider";
 import Description from "../../components/Description";
+import { addItem } from "../../redux/slices/cartSlice";
 const ProductScreen = () => {
     const { id } = useParams();
     const [game, setGame] = useState(null);
@@ -26,11 +28,12 @@ const ProductScreen = () => {
                 website: gameData.website,
                 released: gameData.released,
                 genres: gameData.genres,
-                publisher: gameData.publishers[0]
+                publisher: gameData.publishers[0],
+                id:id
             }
             setGame(gameInfo)
             
-            console.log(gameData)
+            
             console.log(gameInfo)
         } catch (error) {
             console.log(error)
