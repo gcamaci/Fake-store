@@ -61,6 +61,9 @@ const ProductScreen = () => {
                     <div className="col-start-3 col-end-4 row-start-1 row-end-3">
                         <Description info={game}/>
                     </div>
+                    <div className="flex items-end justify-end">
+                        <button>Add to Cart +</button>
+                    </div>
                 </div>
             </>
         )}
