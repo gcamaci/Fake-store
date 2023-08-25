@@ -1,14 +1,24 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import ImgSlider from "../../components/ImgSlider";
 import Description from "../../components/Description";
 import { addItem } from "../../redux/slices/cartSlice";
+
 const ProductScreen = () => {
     const { id } = useParams();
     const [game, setGame] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const dispatch = useDispatch();
+    const cartItems = useSelector((state)=> state.cart)
+    
+    const addToCart = () => {
+        if(game){
+            dispatch(addItem(game))
+            console.log(cartItems)
+        }
+    }
 
     const getGame = async (id) => {
         try {
@@ -65,7 +75,7 @@ const ProductScreen = () => {
                         <Description info={game}/>
                     </div>
                     <div className="flex items-end justify-end">
-                        <button>Add to Cart +</button>
+                        <button onClick={addToCart}>Add to Cart +</button>
                     </div>
                 </div>
             </>
