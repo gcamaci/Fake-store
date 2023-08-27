@@ -7,7 +7,7 @@ export const router = createBrowserRouter([
       element: <HomeScreen />
     },
     {
-      path: "/product/:id",
+      path: "/product/:id/:price",
       element: <ProductScreen />
     },
     {

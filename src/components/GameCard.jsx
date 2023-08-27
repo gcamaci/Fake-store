@@ -11,6 +11,7 @@ import {
 
 const GameCard = (props) => {
     const { name, price, image, id, platforms } = props;
+    console.log(price)
     const navigate = useNavigate()
     const icons = {
         playstation: faPlaystation,
@@ -25,7 +26,7 @@ const GameCard = (props) => {
     })
     
     return (
-        <div onClick={() => navigate(`/product/${id}`)} className='flex flex-col h-[350px] cursor-pointer hover:opacity-70 bg-lite text-primary rounded-xl'>
+        <div onClick={() => navigate(`/product/${id}/${price}`)} className='flex flex-col h-[350px] cursor-pointer hover:opacity-70 bg-lite text-primary rounded-xl'>
             <div>
                 <img className='h-[250px] w-full rounded-t-xl' src={image}></img>
             </div>

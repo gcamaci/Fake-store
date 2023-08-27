@@ -7,7 +7,7 @@ import Description from "../../components/Description";
 import { addItem } from "../../redux/slices/cartSlice";
 
 const ProductScreen = () => {
-    const { id } = useParams();
+    const { id, price} = useParams();
     const [game, setGame] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch();
@@ -39,7 +39,8 @@ const ProductScreen = () => {
                 released: gameData.released,
                 genres: gameData.genres,
                 publisher: gameData.publishers[0],
-                id:id
+                id:id,
+                price:price
             }
             setGame(gameInfo)
             
