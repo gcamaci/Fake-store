@@ -16,7 +16,7 @@ const CartItem = (props) => {
             <img className="w-1/4" src={cover_image}></img>
             <div className="flex-grow">
                 <h1 className="text-xs">{name}</h1>
-                <p>{price}</p>
+                <p>{`$${price}`}</p>
             </div>
             <div className="flex-grow text-end">
                 <FontAwesomeIcon onClick={deleteItem} size="xl" icon={faTrashCan} style={{color: "#d94126",}} />

@@ -60,7 +60,7 @@ const ProductScreen = () => {
         <div className="">
         {game && (
             <>
-                <div className="mx-5 h-[10vh] flex justify-between items-center">
+                <div className="mx-5 h-[10vh] flex justify-between items-center text-primary">
                     <div>
                         <Link to="/">Home</Link>
                     </div>
@@ -68,7 +68,7 @@ const ProductScreen = () => {
                         <h1>{game.name}</h1>
                     </div>
                 </div>
-                <div className="border h-[80vh] grid grid-cols-3 grid-rows-3 gap-5 p-5">
+                <div className="h-[80vh] grid grid-cols-3 grid-rows-3 gap-5 p-5 text-primary">
                     <div className="col-start-1 col-end-3 row-start-1 row-end-4">
                         <ImgSlider imgs={game.screenShots} />
                     </div>
