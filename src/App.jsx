@@ -12,7 +12,7 @@ function App() {
     <Provider store={store}>
       <div className='bg-primary'>
         <Header />
-        <RouterProvider router={router} />
+        <RouterProvider router={router}/>
       </div>
     </Provider>
   )

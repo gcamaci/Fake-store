@@ -8,12 +8,12 @@ const Cart = () => {
     const cartItems = useSelector((state)=> state.cart)
     const [isOpen,setIsOpen] = useState(false)
     const count = cartItems.length
-    console.log(cartItems)
+    
     const toggleCart = () => {
         setIsOpen(!isOpen)
     }
     return (
-        <div className="w-1/4 flex justify-end">
+        <div className="flex justify-end items-center col-start-10 col-end-13">
             <div>
                 <div className="">
                     {count}

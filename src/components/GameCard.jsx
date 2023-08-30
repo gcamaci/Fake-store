@@ -11,7 +11,6 @@ import {
 
 const GameCard = (props) => {
     const { name, price, image, id, platforms } = props;
-    console.log(price)
     const navigate = useNavigate()
     const icons = {
         playstation: faPlaystation,

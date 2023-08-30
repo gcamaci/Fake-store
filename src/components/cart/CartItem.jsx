@@ -9,7 +9,6 @@ const CartItem = (props) => {
     const dispatch = useDispatch()
     const deleteItem = () => {
         dispatch(removeItem(id))
-        console.log(id)
     }
     return (
         <div className="m-3 gap-3 flex justify-between items-center">
