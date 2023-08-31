@@ -5,6 +5,7 @@ import { useDispatch,useSelector } from "react-redux";
 import ImgSlider from "../../components/ImgSlider";
 import Description from "../../components/Description";
 import { addItem } from "../../redux/slices/cartSlice";
+import Header from "../../components/Header";
 
 const ProductScreen = () => {
     const { id, price} = useParams();
@@ -58,6 +59,7 @@ const ProductScreen = () => {
     },[id])
     return (
         <div className="">
+            <Header />
         {game && (
             <>
                 <div className="mx-5 h-[10vh] flex justify-between items-center text-primary">

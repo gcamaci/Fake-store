@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import formatGameObjs from "../../utils/formatGames";
 import GameCard from "../../components/GameCard";
 import Nav from "../../components/Nav";
+import Header from "../../components/Header";
 const HomeScreen = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -49,6 +50,7 @@ const HomeScreen = () => {
 
     return (
         <div className="grid grid-cols-12">
+            <Header />
             <Nav />
             <div className="col-start-3 col-end-13 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-5">
                 {isLoading && <h1>Loading...</h1>}

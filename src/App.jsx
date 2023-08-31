@@ -11,7 +11,6 @@ function App() {
   return (
     <Provider store={store}>
       <div className='bg-primary'>
-        <Header />
         <RouterProvider router={router}/>
       </div>
     </Provider>
