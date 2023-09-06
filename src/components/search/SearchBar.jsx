@@ -46,7 +46,7 @@ const SearchBar = () => {
                 onChange={searchChange}
                 type="search" 
                 placeholder="Search Game Title"
-                className="w-full p-2 text-black"
+                className="w-full p-2 text-black rounded-xl"
                 />
             </div>
             {isOpen && 

@@ -70,7 +70,7 @@ const ProductScreen = () => {
                         <h1>{game.name}</h1>
                     </div>
                 </div>
-                <div className="h-[80vh] grid grid-cols-3 grid-rows-3 gap-5 p-5 text-primary">
+                <div className="h-[80vh] grid grid-cols-3 grid-rows-3 gap-1 p-5 text-primary">
                     <div className="col-start-1 col-end-3 row-start-1 row-end-4">
                         <ImgSlider imgs={game.screenShots} />
                     </div>
