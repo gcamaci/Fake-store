@@ -56,7 +56,7 @@ const GenreNav = () => {
         getGenres()
     },[])
     return (
-        <div>
+        <div className=""> 
           Genre
             <ul className="">
               {genres && 
