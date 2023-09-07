@@ -22,7 +22,6 @@ const SearchBar = () => {
         } finally{
             console.log('here you go')
         }
-            
     }
 
     const searchChange = (e) => {
@@ -32,7 +31,7 @@ const SearchBar = () => {
             setIsOpen(false)
         }
     }
-
+    
     useEffect(()=> {
         if(debouncedSearch){
             getGameData(debouncedSearch)
@@ -55,7 +54,10 @@ const SearchBar = () => {
                         return (
                             <div className="m-2 flex items-center gap-2" 
                             key={game.id}
-                            onClick={() => navigate(`/product/${game.id}/${game.price}`)}
+                            onClick={() => {
+                                navigate(`/product/${game.id}/${game.price}`);
+                                setIsOpen(false)
+                            }}
                             >
                                 <img src={game.image} className="w-[75px] h-[50px]"></img>
                                 <p>{game.name}</p>
