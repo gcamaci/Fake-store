@@ -9,7 +9,8 @@ export default {
       backgroundColor: {
         'primary':'#151515',
         'secondary':'#202020',
-        'lite':'hsla(0,0%,100%,.1)'
+        'lite':'hsla(0,0%,100%,.1)',
+        'img': 'rgba(36, 35, 36, 0.8)'
       },
       colors: {
         'primary': '#fff'

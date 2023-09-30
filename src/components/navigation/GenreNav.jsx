@@ -56,7 +56,7 @@ const GenreNav = () => {
         getGenres()
     },[])
     return (
-        <div className=""> 
+        <div className="w-full"> 
           Genre
             <ul className="">
               {genres && 
@@ -65,7 +65,7 @@ const GenreNav = () => {
                     return (
                       <div onClick={()=> navigate(`/genre/${genre.id}`)} 
                       key={genre.id} 
-                      className="flex gap-2 m-3 items-center hover:bg-secondary hover:m-2">
+                      className="flex gap-2 m-3 items-center hover:bg-secondary">
                         <FontAwesomeIcon className="bg-lite p-2 w-[25px] h-[25px] rounded-md" icon={iCons[genre.slug]}/>
                         <li >{genre.name}</li>
                       </div>

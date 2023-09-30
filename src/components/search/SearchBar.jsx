@@ -12,7 +12,7 @@ const SearchBar = () => {
 
     const getGameData = async (searchKey) => {
         try{
-            const rawgResponse = await fetch(`//api.rawg.io/api/games?key=e5c64a9c49864500a278d85516df2eac&search=${searchKey}&page_size=5`, {mode: 'cors'})
+            const rawgResponse = await fetch(`https://api.rawg.io/api/games?key=e5c64a9c49864500a278d85516df2eac&search=${searchKey}&page_size=5`, {mode: 'cors'})
             const gameData = await rawgResponse.json()
             const searchResults = formatGameObjs(gameData.results)
             console.log(searchResults)
